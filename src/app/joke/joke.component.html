@@ -1,0 +1,25 @@
+<div *ngIf="joke; else loading">
+    <div class="quote-container" >
+        <!-- Quote -->
+        <div class="quote-text">
+            <i class="fas fa-quote-left"></i>
+            <span>{{joke.value}}</span>
+        </div>
+
+        <!-- Author -->
+        <div class="quote-author">
+            <span></span>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-container">
+            <button class="twitter-button" (click)="markAsFavorite(joke)">
+                Add To Favourites
+            </button>
+            <button class="new-quoter" (click)="fetchJoke()">New Joke</button>
+        </div>
+    </div>
+</div>
+<ng-template #loading>
+  <p>Loading...</p>
+</ng-template>

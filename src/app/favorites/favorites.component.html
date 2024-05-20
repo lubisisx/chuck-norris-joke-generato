@@ -1,0 +1,11 @@
+<div *ngIf="jokes.length; else nojokes">
+    <div class="quote-container" *ngFor="let joke of jokes">
+        <div class="quote-text" >
+            <i class="fas fa-quote-left"></i>
+            <span>{{joke.value}}</span>
+        </div>
+    </div>
+</div>
+<ng-template #nojokes>
+  <p>No favourite jokes yet!</p>
+</ng-template>
